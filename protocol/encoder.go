@@ -29,6 +29,10 @@ type DeferredEncoder interface {
 	Encode(buf []byte) error
 }
 
+type Encoder interface {
+	Encode(pe PacketEncoder) error
+}
+
 type pushedEncoder struct {
 	off     int
 	encoder DeferredEncoder

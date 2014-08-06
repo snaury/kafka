@@ -35,6 +35,10 @@ type DeferredDecoder interface {
 	Decode(buf []byte) error
 }
 
+type Decoder interface {
+	Decode(pd PacketDecoder) error
+}
+
 type pushedDecoder struct {
 	off     int
 	decoder DeferredDecoder
